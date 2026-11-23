@@ -1,0 +1,56 @@
+{
+  "project": "Team39_Project8_SASRec_ML1M",
+  "contract_version": "1.0.0",
+  "seed": 42,
+  "data": {
+    "raw_dir": "data/ml-1m",
+    "processed_path": "data/ml1m_processed.pkl",
+    "item2title_path": "data/item2title.json",
+    "min_user_interactions": 5,
+    "pad_id": 0,
+    "first_item_id": 1,
+    "max_seq_len": 100,
+    "padding_side": "right",
+    "split_strategy": "leave_one_out"
+  },
+  "models": {
+    "sasrec": {
+      "d_model": 64,
+      "num_blocks": 2,
+      "num_heads": 2,
+      "dropout": 0.2,
+      "max_seq_len": 100,
+      "loss": "cross_entropy_ignore_pad"
+    },
+    "gru4rec": {
+      "d_model": 64,
+      "num_layers": 1,
+      "dropout": 0.2,
+      "max_seq_len": 100,
+      "loss": "cross_entropy_ignore_pad"
+    },
+    "popularity": {
+      "fit_split": "train_only"
+    }
+  },
+  "evaluation": {
+    "protocol": "full_catalog",
+    "top_k": 10,
+    "metrics": ["HR@10", "NDCG@10"],
+    "exclude_seen_history": true,
+    "keep_target_item": true,
+    "exclude_pad_id": true,
+    "sampled_100_optional": false
+  },
+  "api": {
+    "host": "127.0.0.1",
+    "port": 8000,
+    "recommend_endpoint": "/api/recommend",
+    "default_top_k": 10
+  },
+  "paths": {
+    "checkpoints_dir": "checkpoints",
+    "results_dir": "results",
+    "report_dir": "report"
+  }
+}

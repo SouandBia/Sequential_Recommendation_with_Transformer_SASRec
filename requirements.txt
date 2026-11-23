@@ -1,0 +1,20 @@
+# Team 39 — Project 8 (SASRec on MovieLens-1M)
+# Verified for Python 3.10.
+#
+# Standard cross-platform install:
+#   pip install -r requirements.txt
+#
+# For RTX 4060 GPU acceleration on Windows (CUDA 13.0 wheel matching driver CUDA 13.4):
+#   pip install torch==2.14.1 --index-url https://download.pytorch.org/whl/cu130
+#   pip install -r requirements.txt
+
+torch==2.14.1
+numpy==2.2.6
+pandas==2.3.3
+matplotlib==3.10.9
+tqdm==4.70.1
+fastapi==0.162.5
+uvicorn[standard]==0.54.0
+pydantic==2.14.4
+httpx==0.28.1
+pytest==9.2.0

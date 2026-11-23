@@ -1,0 +1,11 @@
+[project]
+name = "team39-sasrec-ml1m"
+version = "0.1.0"
+description = "Team 39 Project 8: Sequential Recommendation with Transformer (SASRec) vs GRU4Rec and Most-Popular on MovieLens-1M"
+readme = "README.md"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-ra"

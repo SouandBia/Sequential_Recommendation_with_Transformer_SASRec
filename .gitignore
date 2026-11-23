@@ -1,0 +1,52 @@
+# Raw & processed MovieLens-1M data (never commit official MovieLens files to public GitHub)
+data/ml-1m/*
+!data/ml-1m/.gitkeep
+data/*.zip
+data/*.dat
+data/*.pkl
+data/item2title.json
+
+# Model checkpoints (uncomment force-add or track final *_best.pt explicitly if needed)
+checkpoints/*.pt
+checkpoints/*.pth
+checkpoints/*.bin
+!checkpoints/.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.Python
+.venv/
+venv/
+env/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Node / React (web/)
+web/node_modules/
+web/dist/
+web/.vite/
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Logs & temporary artifacts
+*.log
+runs/
+.env
+.env.local
+
+# OS / Editor / Office lock files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+~$*.docx
+~$*.pptx
