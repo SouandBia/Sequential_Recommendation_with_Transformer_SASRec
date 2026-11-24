@@ -87,8 +87,8 @@ pytest
 ## 48-Hour Kickoff Checklist
 
 - [x] **Task 1 (Both | Hours 1–6)**: Initialize repository structure (`data/`, `src/`, `tests/`, `checkpoints/`, `api/`, `web/`, `results/`, `report/`), pin Python dependencies (`requirements.txt`), and lock shared data/API/model contract (`CONTRACT.md`, `configs/default.json`).
-- [ ] **Task 2 (Student B | Hours 6–48)**: Download MovieLens-1M from GroupLens; build chronological Leave-One-Out preprocessing (`data/ml1m_processed.pkl`, `data/item2title.json`); implement & unit-test full-catalog HR@10/NDCG@10 on synthetic data; expose mock `POST /api/recommend` in `api/` for immediate React integration.
-- [ ] **Task 3 (Student A | Hours 6–48)**: Implement pure-PyTorch SASRec (`d=64`, 2 blocks, 2 heads, `dropout=0.2`, right-padding, `L=100`); verify finite forward/backward pass, last-valid-position selection, padding invariance, and zero future token leakage via synthetic tests.
+- [x] **Task 2 (Student B | Hours 6–48)**: Download MovieLens-1M from GroupLens; build chronological Leave-One-Out preprocessing (`data/ml1m_processed.pkl`, `data/item2title.json`); implement & unit-test full-catalog HR@10/NDCG@10 on synthetic data; expose mock `POST /api/recommend` in `api/` for immediate React integration.
+- [x] **Task 3 (Student A | Hours 6–48)**: Implement pure-PyTorch SASRec (`d=64`, 2 blocks, 2 heads, `dropout=0.2`, right-padding, `L=100`); verify finite forward/backward pass, last-valid-position selection, padding invariance, and zero future token leakage via synthetic tests.
 
 ---
 
