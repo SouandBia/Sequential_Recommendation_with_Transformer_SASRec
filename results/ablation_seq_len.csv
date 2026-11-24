@@ -1,0 +1,4 @@
+model,max_seq_len,num_blocks,d_model,seed,best_epoch,val_HR@10,val_NDCG@10,train_time_sec,peak_vram_mb
+sasrec,50,2,64,42,56,0.304801,0.17458,42.94,433.07
+sasrec,100,2,64,42,57,0.317384,0.18205,71.74,870.68
+sasrec,200,2,64,42,59,0.316887,0.184022,149.56,1806.85

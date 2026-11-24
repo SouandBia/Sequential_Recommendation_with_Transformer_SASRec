@@ -1,120 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Team 39 — SASRec vs GRU4Rec vs Popularity (Mock API Tester)</title>
-  <style>
-    :root { font-family: system-ui, -apple-system, sans-serif; color: #0f172a; background: #f8fafc; }
-    body { max-width: 1120px; margin: 2rem auto; padding: 0 1rem; }
-    h1 { font-size: 1.45rem; margin-bottom: 0.25rem; }
-    .sub { color: #475569; font-size: 0.92rem; margin-bottom: 1.25rem; }
-    .card { background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1rem 1.25rem; margin-bottom: 1rem; }
-    .row { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
-    input[type="text"] { flex: 1; min-width: 240px; padding: 0.5rem 0.75rem; border: 1px solid #cbd5e1; border-radius: 6px; }
-    button { padding: 0.5rem 0.9rem; border-radius: 6px; border: 1px solid #1d4ed8; background: #2563eb; color: #fff; cursor: pointer; font-weight: 600; }
-    button.secondary { background: #fff; color: #334155; border-color: #cbd5e1; }
-    .chips { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.65rem; }
-    .chip { background: #eff6ff; border: 1px solid #bfdbfe; color: #1e3a8a; padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.85rem; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 1rem; }
-    ol { padding-left: 1.25rem; margin: 0.5rem 0 0; }
-    li { margin-bottom: 0.45rem; font-size: 0.9rem; }
-    .score { color: #64748b; font-family: monospace; font-size: 0.82rem; }
-    .status { font-size: 0.88rem; color: #0f766e; margin-top: 0.5rem; }
-    .error { color: #b91c1c; }
-  </style>
-</head>
-<body>
-  <h1>Team 39 — Sequential Recommendation Demo Harness (Week 1 Mock API)</h1>
-  <p class="sub">Ordered MovieLens-1M history &rarr; <code>POST /api/recommend</code>. Scores shown below are <strong>raw model scores</strong> (never probabilities).</p>
-
-  <div class="card">
-    <div class="row">
-      <input id="searchInput" type="text" placeholder="Search MovieLens-1M title (e.g. Toy Story, Heat)..." />
-      <button type="button" id="searchBtn" class="secondary">Search Movies</button>
-      <button type="button" id="recommendBtn">Get Top-10 Recommendations</button>
-      <button type="button" id="clearBtn" class="secondary">Clear History</button>
-    </div>
-    <div id="searchResults" class="chips"></div>
-    <p style="margin:0.75rem 0 0.25rem;font-weight:600;font-size:0.9rem;">Ordered Watch/Rating History:</p>
-    <div id="historyList" class="chips"></div>
-    <div id="statusMsg" class="status"></div>
-  </div>
-
-  <div class="grid">
-    <div class="card"><h3>SASRec (Top 10)</h3><ol id="sasrecList"></ol></div>
-    <div class="card"><h3>GRU4Rec (Top 10)</h3><ol id="gruList"></ol></div>
-    <div class="card"><h3>Most-Popular (Top 10)</h3><ol id="popList"></ol></div>
-  </div>
-
-  <script>
-    const API_BASE = "http://127.0.0.1:8000";
-    const history = [];
-
-    function renderHistory() {
-      const el = document.getElementById("historyList");
-      el.innerHTML = history.length
-        ? history.map((m, i) => `<span class="chip">${i + 1}. [${m.item_id}] ${m.title}</span>`).join("")
-        : `<span style="color:#64748b;font-size:0.86rem;">No movies added yet. Click a movie above to append.</span>`;
-    }
-
-    function renderList(targetId, items) {
-      document.getElementById(targetId).innerHTML = (items || [])
-        .map(it => `<li><strong>${it.title}</strong> <span class="score">(raw score: ${Number(it.score).toFixed(4)})</span><br/><small style="color:#64748b">${(it.genres || []).join(" | ")}</small></li>`)
-        .join("");
-    }
-
-    async function searchMovies(query = "") {
-      const status = document.getElementById("statusMsg");
-      try {
-        const res = await fetch(`${API_BASE}/api/movies?q=${encodeURIComponent(query)}&limit=8`);
-        const data = await res.json();
-        const container = document.getElementById("searchResults");
-        container.innerHTML = "";
-        (data.items || []).forEach(movie => {
-          const btn = document.createElement("button");
-          btn.className = "secondary";
-          btn.style.fontSize = "0.82rem";
-          btn.textContent = `+ [${movie.item_id}] ${movie.title}`;
-          btn.onclick = () => { history.push(movie); renderHistory(); };
-          container.appendChild(btn);
-        });
-        status.className = "status";
-        status.textContent = `Loaded ${(data.items || []).length} catalog items from ${API_BASE}/api/movies.`;
-      } catch (err) {
-        status.className = "status error";
-        status.textContent = `Cannot reach API (${err.message}). Start uvicorn api.create_app:app --port 8000.`;
-      }
-    }
-
-    async function fetchRecommendations() {
-      const status = document.getElementById("statusMsg");
-      const t0 = performance.now();
-      try {
-        const res = await fetch(`${API_BASE}/api/recommend`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ history_ids: history.map(m => m.item_id), top_k: 10 })
-        });
-        const payload = await res.json();
-        if (!res.ok) throw new Error(payload.detail || `HTTP ${res.status}`);
-        renderList("sasrecList", payload.sasrec_recommendations);
-        renderList("gruList", payload.gru4rec_recommendations);
-        renderList("popList", payload.popular_recommendations);
-        const dt = (performance.now() - t0).toFixed(1);
-        status.className = "status";
-        status.textContent = `POST /api/recommend succeeded in ${dt} ms for history [${payload.history_ids.join(", ")}].`;
-      } catch (err) {
-        status.className = "status error";
-        status.textContent = `Recommendation error: ${err.message}`;
-      }
-    }
-
-    document.getElementById("searchBtn").onclick = () => searchMovies(document.getElementById("searchInput").value);
-    document.getElementById("recommendBtn").onclick = fetchRecommendations;
-    document.getElementById("clearBtn").onclick = () => { history.length = 0; renderHistory(); };
-    renderHistory();
-    searchMovies("");
-  </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team 39 — SASRec vs GRU4Rec vs Most-Popular (MovieLens-1M)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

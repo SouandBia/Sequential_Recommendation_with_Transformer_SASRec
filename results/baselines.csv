@@ -1,0 +1,4 @@
+model,seed,max_seq_len,d_model,best_epoch,epochs_run,val_HR@10,val_NDCG@10,test_HR@10,test_NDCG@10,train_time_sec,test_eval_sec,peak_vram_mb,mapping_version
+popularity,42,0,0,0,0,0.041722,0.020605,0.035265,0.017324,5.5057,0.677,0.0,ml1m_v1_d3f0ba385b14083d
+gru4rec,42,100,64,46,56,0.312086,0.178495,0.276821,0.164375,49.6,0.687,780.44,ml1m_v1_d3f0ba385b14083d
+sasrec,42,100,64,57,60,0.317384,0.18205,0.290397,0.168205,66.01,0.772,871.76,ml1m_v1_d3f0ba385b14083d

@@ -19,7 +19,7 @@ def test_recommend_and_movies_contract_and_cors(tmp_path: Path) -> None:
     }
     catalog_file.write_text(json.dumps(catalog), encoding="utf-8")
 
-    client = TestClient(create_app(item2title_path=catalog_file))
+    client = TestClient(create_app(item2title_path=catalog_file, checkpoints_dir=None))
 
     # CORS preflight simulating browser React app call
     preflight = client.options(
@@ -60,7 +60,7 @@ def test_recommend_rejects_invalid_histories(tmp_path: Path) -> None:
         json.dumps({"1": {"title": "Toy Story (1995)", "genres": ["Animation"], "year": 1995}}),
         encoding="utf-8",
     )
-    client = TestClient(create_app(item2title_path=catalog_file))
+    client = TestClient(create_app(item2title_path=catalog_file, checkpoints_dir=None))
 
     assert client.post("/api/recommend", json={"history_ids": [], "top_k": 10}).status_code == 422
     assert client.post("/api/recommend", json={"history_ids": [0], "top_k": 10}).status_code == 422

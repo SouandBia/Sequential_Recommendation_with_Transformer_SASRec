@@ -1,0 +1,773 @@
+[
+  {
+    "case_type": "sasrec_miss_gru4rec_hit",
+    "user_id": 2435,
+    "history_length": 116,
+    "recent_8_history": [
+      {
+        "item_id": 1008,
+        "title": "Fish Called Wanda, A (1988)",
+        "genres": [
+          "Comedy"
+        ],
+        "year": 1988
+      },
+      {
+        "item_id": 3249,
+        "title": "High Fidelity (2000)",
+        "genres": [
+          "Comedy"
+        ],
+        "year": 2000
+      },
+      {
+        "item_id": 1296,
+        "title": "Raising Arizona (1987)",
+        "genres": [
+          "Comedy"
+        ],
+        "year": 1987
+      },
+      {
+        "item_id": 2711,
+        "title": "Ferris Bueller's Day Off (1986)",
+        "genres": [
+          "Comedy"
+        ],
+        "year": 1986
+      },
+      {
+        "item_id": 1168,
+        "title": "Stand by Me (1986)",
+        "genres": [
+          "Adventure",
+          "Comedy",
+          "Drama"
+        ],
+        "year": 1986
+      },
+      {
+        "item_id": 1179,
+        "title": "Back to the Future (1985)",
+        "genres": [
+          "Comedy",
+          "Sci-Fi"
+        ],
+        "year": 1985
+      },
+      {
+        "item_id": 1744,
+        "title": "There's Something About Mary (1998)",
+        "genres": [
+          "Comedy"
+        ],
+        "year": 1998
+      },
+      {
+        "item_id": 3430,
+        "title": "Blazing Saddles (1974)",
+        "genres": [
+          "Comedy",
+          "Western"
+        ],
+        "year": 1974
+      }
+    ],
+    "dominant_recent_5_genres": [
+      "Comedy",
+      "Adventure",
+      "Drama"
+    ],
+    "target_movie": {
+      "item_id": 3623,
+      "title": "Naked Gun: From the Files of Police Squad!, The (1988)",
+      "genres": [
+        "Comedy"
+      ],
+      "year": 1988
+    },
+    "target_train_frequency": 677,
+    "model_predictions": {
+      "popularity": {
+        "target_rank": 320,
+        "top_5": [
+          {
+            "item_id": 467,
+            "title": "Jurassic Park (1993)",
+            "genres": [
+              "Action",
+              "Adventure",
+              "Sci-Fi"
+            ],
+            "year": 1993,
+            "score": 2659.0
+          },
+          {
+            "item_id": 580,
+            "title": "Silence of the Lambs, The (1991)",
+            "genres": [
+              "Drama",
+              "Thriller"
+            ],
+            "year": 1991,
+            "score": 2559.0
+          },
+          {
+            "item_id": 594,
+            "title": "Fargo (1996)",
+            "genres": [
+              "Crime",
+              "Drama",
+              "Thriller"
+            ],
+            "year": 1996,
+            "score": 2486.0
+          },
+          {
+            "item_id": 2558,
+            "title": "Sixth Sense, The (1999)",
+            "genres": [
+              "Thriller"
+            ],
+            "year": 1999,
+            "score": 2409.0
+          },
+          {
+            "item_id": 514,
+            "title": "Schindler's List (1993)",
+            "genres": [
+              "Drama",
+              "War"
+            ],
+            "year": 1993,
+            "score": 2287.0
+          }
+        ]
+      },
+      "gru4rec": {
+        "target_rank": 2,
+        "top_5": [
+          {
+            "item_id": 3133,
+            "title": "Bull Durham (1988)",
+            "genres": [
+              "Comedy"
+            ],
+            "year": 1988,
+            "score": 7.2411
+          },
+          {
+            "item_id": 3623,
+            "title": "Naked Gun: From the Files of Police Squad!, The (1988)",
+            "genres": [
+              "Comedy"
+            ],
+            "year": 1988,
+            "score": 6.9509
+          },
+          {
+            "item_id": 2587,
+            "title": "Airplane! (1980)",
+            "genres": [
+              "Comedy"
+            ],
+            "year": 1980,
+            "score": 6.9119
+          },
+          {
+            "item_id": 1174,
+            "title": "Groundhog Day (1993)",
+            "genres": [
+              "Comedy",
+              "Romance"
+            ],
+            "year": 1993,
+            "score": 6.905
+          },
+          {
+            "item_id": 1789,
+            "title": "Breakfast Club, The (1985)",
+            "genres": [
+              "Comedy",
+              "Drama"
+            ],
+            "year": 1985,
+            "score": 6.6976
+          }
+        ]
+      },
+      "sasrec": {
+        "target_rank": 30,
+        "top_5": [
+          {
+            "item_id": 1174,
+            "title": "Groundhog Day (1993)",
+            "genres": [
+              "Comedy",
+              "Romance"
+            ],
+            "year": 1993,
+            "score": 6.9195
+          },
+          {
+            "item_id": 3133,
+            "title": "Bull Durham (1988)",
+            "genres": [
+              "Comedy"
+            ],
+            "year": 1988,
+            "score": 6.8895
+          },
+          {
+            "item_id": 1789,
+            "title": "Breakfast Club, The (1985)",
+            "genres": [
+              "Comedy",
+              "Drama"
+            ],
+            "year": 1985,
+            "score": 6.6536
+          },
+          {
+            "item_id": 1009,
+            "title": "Monty Python's Life of Brian (1979)",
+            "genres": [
+              "Comedy"
+            ],
+            "year": 1979,
+            "score": 6.6251
+          },
+          {
+            "item_id": 2991,
+            "title": "Fast Times at Ridgemont High (1982)",
+            "genres": [
+              "Comedy"
+            ],
+            "year": 1982,
+            "score": 6.5803
+          }
+        ]
+      }
+    }
+  },
+  {
+    "case_type": "abrupt_genre_shift_both_miss",
+    "user_id": 4064,
+    "history_length": 1008,
+    "recent_8_history": [
+      {
+        "item_id": 2516,
+        "title": "Inspector Gadget (1999)",
+        "genres": [
+          "Action",
+          "Adventure",
+          "Children's",
+          "Comedy"
+        ],
+        "year": 1999
+      },
+      {
+        "item_id": 2818,
+        "title": "Repossessed (1990)",
+        "genres": [
+          "Comedy"
+        ],
+        "year": 1990
+      },
+      {
+        "item_id": 2624,
+        "title": "Dudley Do-Right (1999)",
+        "genres": [
+          "Children's",
+          "Comedy"
+        ],
+        "year": 1999
+      },
+      {
+        "item_id": 233,
+        "title": "Goofy Movie, A (1995)",
+        "genres": [
+          "Animation",
+          "Children's",
+          "Comedy",
+          "Romance"
+        ],
+        "year": 1995
+      },
+      {
+        "item_id": 2973,
+        "title": "My Dog Skip (1999)",
+        "genres": [
+          "Comedy"
+        ],
+        "year": 1999
+      },
+      {
+        "item_id": 3304,
+        "title": "Keeping the Faith (2000)",
+        "genres": [
+          "Comedy",
+          "Romance"
+        ],
+        "year": 2000
+      },
+      {
+        "item_id": 3092,
+        "title": "Wonder Boys (2000)",
+        "genres": [
+          "Comedy",
+          "Drama"
+        ],
+        "year": 2000
+      },
+      {
+        "item_id": 3076,
+        "title": "Whole Nine Yards, The (2000)",
+        "genres": [
+          "Comedy",
+          "Crime"
+        ],
+        "year": 2000
+      }
+    ],
+    "dominant_recent_5_genres": [
+      "Comedy",
+      "Romance",
+      "Animation"
+    ],
+    "target_movie": {
+      "item_id": 3322,
+      "title": "U-571 (2000)",
+      "genres": [
+        "Action",
+        "Thriller"
+      ],
+      "year": 2000
+    },
+    "target_train_frequency": 879,
+    "model_predictions": {
+      "popularity": {
+        "target_rank": 51,
+        "top_5": [
+          {
+            "item_id": 2427,
+            "title": "Star Wars: Episode I - The Phantom Menace (1999)",
+            "genres": [
+              "Action",
+              "Adventure",
+              "Fantasy",
+              "Sci-Fi"
+            ],
+            "year": 1999,
+            "score": 2214.0
+          },
+          {
+            "item_id": 1149,
+            "title": "Terminator, The (1984)",
+            "genres": [
+              "Action",
+              "Sci-Fi",
+              "Thriller"
+            ],
+            "year": 1984,
+            "score": 2067.0
+          },
+          {
+            "item_id": 1168,
+            "title": "Stand by Me (1986)",
+            "genres": [
+              "Adventure",
+              "Comedy",
+              "Drama"
+            ],
+            "year": 1986,
+            "score": 1769.0
+          },
+          {
+            "item_id": 2776,
+            "title": "Who Framed Roger Rabbit? (1988)",
+            "genres": [
+              "Adventure",
+              "Animation",
+              "Film-Noir"
+            ],
+            "year": 1988,
+            "score": 1679.0
+          },
+          {
+            "item_id": 368,
+            "title": "Speed (1994)",
+            "genres": [
+              "Action",
+              "Romance",
+              "Thriller"
+            ],
+            "year": 1994,
+            "score": 1636.0
+          }
+        ]
+      },
+      "gru4rec": {
+        "target_rank": 31,
+        "top_5": [
+          {
+            "item_id": 3101,
+            "title": "What Planet Are You From? (2000)",
+            "genres": [
+              "Comedy",
+              "Sci-Fi"
+            ],
+            "year": 2000,
+            "score": 7.4719
+          },
+          {
+            "item_id": 3099,
+            "title": "Drowning Mona (2000)",
+            "genres": [
+              "Comedy"
+            ],
+            "year": 2000,
+            "score": 7.1756
+          },
+          {
+            "item_id": 3378,
+            "title": "Road Trip (2000)",
+            "genres": [
+              "Comedy"
+            ],
+            "year": 2000,
+            "score": 7.1704
+          },
+          {
+            "item_id": 2931,
+            "title": "Deuce Bigalow: Male Gigolo (1999)",
+            "genres": [
+              "Comedy"
+            ],
+            "year": 1999,
+            "score": 6.9959
+          },
+          {
+            "item_id": 2961,
+            "title": "Next Friday (1999)",
+            "genres": [
+              "Comedy"
+            ],
+            "year": 1999,
+            "score": 6.9275
+          }
+        ]
+      },
+      "sasrec": {
+        "target_rank": 23,
+        "top_5": [
+          {
+            "item_id": 3378,
+            "title": "Road Trip (2000)",
+            "genres": [
+              "Comedy"
+            ],
+            "year": 2000,
+            "score": 6.7674
+          },
+          {
+            "item_id": 3099,
+            "title": "Drowning Mona (2000)",
+            "genres": [
+              "Comedy"
+            ],
+            "year": 2000,
+            "score": 6.4591
+          },
+          {
+            "item_id": 3074,
+            "title": "Hanging Up (2000)",
+            "genres": [
+              "Comedy",
+              "Drama"
+            ],
+            "year": 2000,
+            "score": 6.4384
+          },
+          {
+            "item_id": 2961,
+            "title": "Next Friday (1999)",
+            "genres": [
+              "Comedy"
+            ],
+            "year": 1999,
+            "score": 6.1932
+          },
+          {
+            "item_id": 3379,
+            "title": "Small Time Crooks (2000)",
+            "genres": [
+              "Comedy"
+            ],
+            "year": 2000,
+            "score": 6.1707
+          }
+        ]
+      }
+    }
+  },
+  {
+    "case_type": "long_history_niche_target_miss",
+    "user_id": 4647,
+    "history_length": 892,
+    "recent_8_history": [
+      {
+        "item_id": 4,
+        "title": "Waiting to Exhale (1995)",
+        "genres": [
+          "Comedy",
+          "Drama"
+        ],
+        "year": 1995
+      },
+      {
+        "item_id": 3395,
+        "title": "Spy Who Loved Me, The (1977)",
+        "genres": [
+          "Action"
+        ],
+        "year": 1977
+      },
+      {
+        "item_id": 893,
+        "title": "It's a Wonderful Life (1946)",
+        "genres": [
+          "Drama"
+        ],
+        "year": 1946
+      },
+      {
+        "item_id": 2080,
+        "title": "Indecent Proposal (1993)",
+        "genres": [
+          "Drama"
+        ],
+        "year": 1993
+      },
+      {
+        "item_id": 2679,
+        "title": "Guinevere (1999)",
+        "genres": [
+          "Drama",
+          "Romance"
+        ],
+        "year": 1999
+      },
+      {
+        "item_id": 2429,
+        "title": "Besieged (L' Assedio) (1998)",
+        "genres": [
+          "Drama"
+        ],
+        "year": 1998
+      },
+      {
+        "item_id": 1247,
+        "title": "Cape Fear (1962)",
+        "genres": [
+          "Film-Noir",
+          "Thriller"
+        ],
+        "year": 1962
+      },
+      {
+        "item_id": 342,
+        "title": "Corrina, Corrina (1994)",
+        "genres": [
+          "Comedy",
+          "Drama",
+          "Romance"
+        ],
+        "year": 1994
+      }
+    ],
+    "dominant_recent_5_genres": [
+      "Drama",
+      "Romance",
+      "Film-Noir"
+    ],
+    "target_movie": {
+      "item_id": 3621,
+      "title": "Sunset Strip (2000)",
+      "genres": [
+        "Comedy"
+      ],
+      "year": 2000
+    },
+    "target_train_frequency": 5,
+    "model_predictions": {
+      "popularity": {
+        "target_rank": 2520,
+        "top_5": [
+          {
+            "item_id": 1107,
+            "title": "Star Wars: Episode V - The Empire Strikes Back (1980)",
+            "genres": [
+              "Action",
+              "Adventure",
+              "Drama",
+              "Sci-Fi",
+              "War"
+            ],
+            "year": 1980,
+            "score": 2978.0
+          },
+          {
+            "item_id": 1121,
+            "title": "Star Wars: Episode VI - Return of the Jedi (1983)",
+            "genres": [
+              "Action",
+              "Adventure",
+              "Romance",
+              "Sci-Fi",
+              "War"
+            ],
+            "year": 1983,
+            "score": 2868.0
+          },
+          {
+            "item_id": 576,
+            "title": "Terminator 2: Judgment Day (1991)",
+            "genres": [
+              "Action",
+              "Sci-Fi",
+              "Thriller"
+            ],
+            "year": 1991,
+            "score": 2629.0
+          },
+          {
+            "item_id": 1108,
+            "title": "Princess Bride, The (1987)",
+            "genres": [
+              "Action",
+              "Adventure",
+              "Comedy",
+              "Romance"
+            ],
+            "year": 1987,
+            "score": 2295.0
+          },
+          {
+            "item_id": 2427,
+            "title": "Star Wars: Episode I - The Phantom Menace (1999)",
+            "genres": [
+              "Action",
+              "Adventure",
+              "Fantasy",
+              "Sci-Fi"
+            ],
+            "year": 1999,
+            "score": 2214.0
+          }
+        ]
+      },
+      "gru4rec": {
+        "target_rank": 2306,
+        "top_5": [
+          {
+            "item_id": 2383,
+            "title": "Following (1998)",
+            "genres": [
+              "Drama"
+            ],
+            "year": 1998,
+            "score": 2.6399
+          },
+          {
+            "item_id": 918,
+            "title": "Blue Angel, The (Blaue Engel, Der) (1930)",
+            "genres": [
+              "Drama"
+            ],
+            "year": 1930,
+            "score": 2.6075
+          },
+          {
+            "item_id": 1996,
+            "title": "Rope (1948)",
+            "genres": [
+              "Thriller"
+            ],
+            "year": 1948,
+            "score": 2.5508
+          },
+          {
+            "item_id": 188,
+            "title": "Showgirls (1995)",
+            "genres": [
+              "Drama"
+            ],
+            "year": 1995,
+            "score": 2.4076
+          },
+          {
+            "item_id": 1269,
+            "title": "Crucible, The (1996)",
+            "genres": [
+              "Drama"
+            ],
+            "year": 1996,
+            "score": 2.3146
+          }
+        ]
+      },
+      "sasrec": {
+        "target_rank": 1636,
+        "top_5": [
+          {
+            "item_id": 910,
+            "title": "Beat the Devil (1954)",
+            "genres": [
+              "Comedy",
+              "Drama"
+            ],
+            "year": 1954,
+            "score": 3.156
+          },
+          {
+            "item_id": 3665,
+            "title": "Best in Show (2000)",
+            "genres": [
+              "Comedy"
+            ],
+            "year": 2000,
+            "score": 2.83
+          },
+          {
+            "item_id": 2383,
+            "title": "Following (1998)",
+            "genres": [
+              "Drama"
+            ],
+            "year": 1998,
+            "score": 2.8061
+          },
+          {
+            "item_id": 3608,
+            "title": "Tao of Steve, The (2000)",
+            "genres": [
+              "Comedy"
+            ],
+            "year": 2000,
+            "score": 2.7985
+          },
+          {
+            "item_id": 619,
+            "title": "Jack and Sarah (1995)",
+            "genres": [
+              "Romance"
+            ],
+            "year": 1995,
+            "score": 2.7951
+          }
+        ]
+      }
+    }
+  }
+]
